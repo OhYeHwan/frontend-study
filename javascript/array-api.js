@@ -1,5 +1,5 @@
 // Q1. make a string out of an array
-// join : 배열을 스트링으로 만든다.
+// join : 배열을 스트링으로 만든다. 리턴 값은 String
 {
   const fruits = ["apple", "banana", "orange"];
   //console.log("result : " + fruits.join(" "));
@@ -20,12 +20,15 @@
 // 정렬 기준 필요
 {
   const array = [1, 2, 3, 4, 5];
+  array.reverse(); // 배열 자체를 변화시키고 리턴 값도 변화된 배열!
   array.sort((a, b) => b - a);
   //console.log(array);
 }
 
 // Q4. make new array without the first two elements
 // splice 반환 값은 삭제된 값이다. 원본에서 삭제된다.
+// splice : 배열 자체를 변환
+// slice : 원하는 부분만 리턴 slice(start, end); end X
 {
   const array = [1, 2, 3, 4, 5];
   const newArray = array.splice(0, 2);
@@ -68,6 +71,7 @@ const students = [
 // result should be: [45, 80, 90, 66, 88]
 // map은 새로운 배열을 리턴
 // forEach는 리턴 값이 없음
+// * 콜백함수에 전달되는 인자는 최대한 이해하기 쉽게 작성할 것 *
 {
   const arr = [];
   students.forEach((i) => arr.push(i.score));
@@ -75,10 +79,15 @@ const students = [
   console.log(arr2);
 }
 
+/* 잘 못 생 각 */
 // Q8. check if there is a student with the score lower than 50
 {
   const result = students.filter((i) => i.score < 50);
   console.log(result);
+
+  const result1 = students.some((student) => student.score < 50);
+
+  const result2 = !students.every((student) => student.score >= 50);
 }
 
 // Q9. compute students' average score
@@ -88,6 +97,13 @@ const students = [
     result += i.score;
   });
   console.log(result / students.length);
+
+  // 누적할때 사용
+  const result1 = students.reduce((prev, curr) => {
+    return prev + curr.score;
+  }, 0);
+
+  console.log("Q9 :" + result1);
 }
 
 // Q10. make a string containing all the scores
@@ -106,4 +122,9 @@ const students = [
   score.sort((a, b) => a - b);
   const str = score.join(", ");
   console.log(str);
+
+  const result = students
+    .map((student) => student.score)
+    .sort((a, b) => a - b)
+    .join(", ");
 }
