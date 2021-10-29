@@ -1,4 +1,4 @@
-## Diplay와 Position
+# Diplay와 Position
 
 - display
   - block-level : 한 줄에 하나
