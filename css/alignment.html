@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      {% comment %} flexbox가 아닐때 수평이나 수직에서 정렬하는법 {% endcomment %}
+      {% comment %} flexbox에서는 중심축 정렬 : justify-content {% endcomment %}
+      {% comment %} 반대축에서 정렬 align-items {% endcomment %}
+        .box {
+          width: 200px;
+          height: 100px;
+          background-color: beige;
+        }
+
+      {% comment %} div는 블록레벨이기 때문에 한줄에 하나 {% endcomment %}
+      {% comment %} 블록 레벨의 경우 브라우저에서 자동적으로 마진이 생성된다 {% endcomment %}
+      {% comment %} 대부분 오른쪽으로 채워진다. {% endcomment %}
+      {% comment %} margin: auto 이용 시 마진을 오른쪽 왼쪽 맞춰서 넣어준다. {% endcomment %}
+      {% comment %} margin은 수평만 적용가능 {% endcomment %}
+        .inner {
+          width: 50%;
+          height: 50%;
+          background-color: blue;
+        }
+
+        .inner1 {
+          margin: auto;
+        }
+
+      {% comment %} text-align은 text 뿐만아니라 관습적으로 다른것을 정렬할때도 많이쓰인다. {% endcomment %}
+      {% comment %} 블록레벨의 경우 정렬되지 않는다. {% endcomment %}
+      {% comment %} 블록레벨이 아닌경우 text-align 사용가능 ex) button {% endcomment %}
+      {% comment %} margin: auto , text-align:center은 수평정렬은가능하지만 수직 정렬은 불가능하다. {% endcomment %}
+        .box2 {
+          text-align: center;
+        }
+
+
+      {% comment %} transform : translate(50%, 50%) {% endcomment %}
+      {% comment %} translate를 이용하여 수평정렬 가능 {% endcomment %}
+
+        .inner3 {
+          transform: translate(50%, 50%);
+        }
+
+      {% comment %} 텍스트의 경우 line-heihgt로 수평정렬을 할수있다. {% endcomment %}
+      {% comment %} line-height - 부모의 height를 이용 {% endcomment %}
+      {% comment %} 텍스트정렬은 폰트메트릭스를 이용 {% endcomment %}
+        .box4 h1 {
+          text-align: center;
+          line-height: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <h3>margin: auto</h3>
+    <div class="box box1">
+      <div class="inner inner1"></div>
+    </div>
+    <h3>text-align: center</h3>
+    <div class="box box2">
+      <button>Text</button>
+    </div>
+    <h3>translate(50%, 50%)</h3>
+    <div class="box box3">
+      <div class="inner inner3"></div>
+    </div>
+    <h3>Text centering</h3>
+    <div class="box box4">
+      <h1>Text<br />Text</h1>
+    </div>
+  </body>
+</html>
