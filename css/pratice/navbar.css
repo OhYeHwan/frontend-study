@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+header {
+  height: 100px;
+  background-color: green;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  color: white;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  color: white;
+  padding-right: 40px;
+}
+
+.icon {
+  color: white;
+  padding-right: 10px;
+}
