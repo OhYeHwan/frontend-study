@@ -33,6 +33,7 @@ class Habit extends Component {
   };
 
   render() {
+    console.log("habit");
     // const {0 , 0} = {X, X} : Destructuring assignment
     const { name, count } = this.props.habit;
     return (

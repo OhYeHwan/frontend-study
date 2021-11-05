@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class HabitAddForm extends Component {
+class HabitAddForm extends PureComponent {
   // 리액트는 직접 돔요소에 접근하지 않기때문에
   // 필요할때는 리액트에서 제공하는 createRef를 이용하여
   // 멤버변수를 정의한다음에 해당 컴포넌트에 ref를 연결하여 사용
@@ -19,6 +19,7 @@ class HabitAddForm extends Component {
   };
 
   render() {
+    console.log("habitaddform");
     return (
       // form 안에서 버튼이 눌리면 submit이라는 이벤트가 발생한다.
       // 기본적으로 submit은 리프레쉬된다.

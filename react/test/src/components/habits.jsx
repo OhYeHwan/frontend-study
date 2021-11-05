@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Habit from "./habit";
 import HabitAddForm from "./habitAddForm";
 
@@ -21,6 +21,7 @@ class Habits extends Component {
 
   render() {
     const habits = this.props.habits;
+    console.log("habits");
     return (
       <>
         <HabitAddForm onAdd={this.handleAdd} />

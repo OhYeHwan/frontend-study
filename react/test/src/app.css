@@ -33,6 +33,10 @@ button {
   border-radius: 50%;
 }
 
+.add-form {
+  margin-top: 20px;
+}
+
 .add-input {
   font-size: 2rem;
 }
